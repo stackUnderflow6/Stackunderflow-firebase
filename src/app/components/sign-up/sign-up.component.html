@@ -1,0 +1,95 @@
+<img class="pic" mat-image src="./../../assets/images/pic1.png" style="width:100px;height:100px;" class="center">
+
+<mat-card class="example-card">
+  <div class="parent">
+    <mat-card-header>
+      <mat-card-title>Create an Account</mat-card-title>
+    </mat-card-header>
+
+        <mat-accordion class="example-headers-align">
+          <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Personal data
+              </mat-panel-title>
+              <mat-panel-description>
+                Tell us about yourself!
+                <mat-icon>account_circle</mat-icon>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <!-- <mat-form-field>
+              <mat-label>First name</mat-label>
+              <input matInput >
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Last Name</mat-label>
+              <input matInput >
+            </mat-form-field> -->
+        
+            <!-- <mat-form-field>
+              <mat-label>Date of Birth</mat-label>
+              <input matInput [matDatepicker]="picker" (focus)="picker.open()" readonly>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field> -->
+
+            <mat-form-field>
+              <mat-label>Email</mat-label>
+              <input matInput type="email" placeholder="Email Address" #userEmail required>
+            </mat-form-field>
+
+            <!-- <mat-form-field>
+              <mat-label>Username</mat-label>
+              <input matInput >
+            </mat-form-field> -->
+
+            <mat-form-field>
+              <mat-label>Password</mat-label>
+              <input matInput type="password" placeholder="Password" #userPwd required>
+            </mat-form-field>
+
+            <!-- #docregion action-bar -->
+            <mat-action-row>
+              <button mat-button color="primary" type="button" value="Submit" (click)="authService.SignUp(userEmail.value, userPwd.value)">Submit</button>
+              <!-- <button mat-button color="primary" (click)="nextStep()">Next</button> -->
+            </mat-action-row>
+            <!-- #enddocregion action-bar -->
+          </mat-expansion-panel>
+        
+          <!-- Survey -->
+         <!-- <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Survey
+              </mat-panel-title>
+              <mat-panel-description>
+                Tell us why you're here!
+                <mat-icon>date_range</mat-icon>
+              </mat-panel-description>
+            </mat-expansion-panel-header> -->
+
+            <!-- <section>
+              <mat-label>Languages you know</mat-label>
+              <div>
+              <mat-checkbox>C</mat-checkbox><br>
+              <mat-checkbox>C++</mat-checkbox><br>
+              <mat-checkbox>C#</mat-checkbox><br>
+              <mat-checkbox>Python</mat-checkbox><br>
+              <mat-checkbox>Java</mat-checkbox><br>
+              <mat-checkbox>Javascript</mat-checkbox><br>
+              </div>
+            </section> -->
+        
+            <!-- <mat-action-row>
+              <button mat-button color="warn" (click)="prevStep()">Previous</button>
+              <button mat-button color="primary" type="button" value="Submit" (click)="authService.SignUp(userEmail.value, userPwd.value)">Submit</button>
+            </mat-action-row>
+          </mat-expansion-panel> -->
+        </mat-accordion>
+        
+      <div class="redirectToLogin">
+        <span>Already have an account? <span class="redirect" routerLink="/login">Log In</span></span>
+      </div>
+  </div>
+</mat-card>

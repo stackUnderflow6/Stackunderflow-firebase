@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "loginScreen": {
+    "stackUnderflow": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/loginScreen",
+            "outputPath": "dist/stackUnderflow",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -67,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "loginScreen:build"
+            "browserTarget": "stackUnderflow:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "loginScreen:build:production"
+              "browserTarget": "stackUnderflow:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "loginScreen:build"
+            "browserTarget": "stackUnderflow:build"
           }
         },
         "test": {
@@ -115,20 +115,20 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "loginScreen:serve"
+            "devServerTarget": "stackUnderflow:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "loginScreen:serve:production"
+              "devServerTarget": "stackUnderflow:serve:production"
             }
           }
         },
         "deploy": {
-          "builder": "angular-cli-ghpages:deploy",
+          "builder": "@angular/fire:deploy",
           "options": {}
         }
       }
     }
   },
-  "defaultProject": "loginScreen"
+  "defaultProject": "stackUnderflow"
 }
